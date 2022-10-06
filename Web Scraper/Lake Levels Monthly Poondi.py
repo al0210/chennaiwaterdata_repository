@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-url = "http://123.63.203.150/oldfirstday03.htm"
+url = "http://123.63.203.150/avgrain03.htm"
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 
