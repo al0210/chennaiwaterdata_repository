@@ -33,11 +33,11 @@ for t in range(len(tables)):        # for loop will run for all tables
         row_values = lake_rows[r].text.split('\n\n\n')
         lake_list.append(row_values)
     df_list.append(lake_list)
-poondi = pd.DataFrame(df_list[0])[3:]   # poondi will contain the third row of the first column from the data appended in df_list
-chola = pd.DataFrame(df_list[1])[3:]    # chola will contain the third row of the second column from the data appended in df_list
-redhills = pd.DataFrame(df_list[2])[3:]     # redhills will contain the third row of the third column from the data appended in df_list
-chemba = pd.DataFrame(df_list[3])[3:]   # chemba will contain the third row of the fourth column from the data appended in df_list
-veeranam = pd.DataFrame(df_list[4])[3:]     # veeranam will contain the third row of the fifth column from the data appended in df_list
+poondi = pd.DataFrame(df_list[0])[3:]   # poondi will contain data from the third row of the first column of df_list
+chola = pd.DataFrame(df_list[1])[3:]    # chola will contain data from the second column of df_list
+redhills = pd.DataFrame(df_list[2])[3:]     # redhills will contain data from the third row of the third column of df_list
+chemba = pd.DataFrame(df_list[3])[3:]   # chemba will contain data from the third row of the fourth column of df_list
+veeranam = pd.DataFrame(df_list[4])[3:]     # veeranam will contain data from the third row of the fifth column of df_list
 for i in poondi.columns:
     poondi[i] = poondi[i].str.replace('\n\n', '')   # to replace all '\n\n' with empty space ''
 for i in chola.columns:
