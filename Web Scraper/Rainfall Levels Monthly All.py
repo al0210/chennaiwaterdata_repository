@@ -12,7 +12,7 @@ import requests
 import pandas as pd     
 # pandas helps in data structuring 
 
-url = "http://123.63.203.150/oldfirstday03.htm"     
+url = "http://123.63.203.150/avgrain03.htm"     
 # variable - url defined to store the url of the web page we are taking to scrape data from
 page = requests.get(url)        
 # variable - page defined to request the HTTP to get the url stored in the variable 'url'
