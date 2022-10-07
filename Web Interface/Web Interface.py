@@ -6,22 +6,26 @@ Created on Thu Oct  6 14:26:41 2022
 """
 
 from flask import Flask, render_template, redirect, url_for
+# Flask imported from library flask to help develop a web interface
 import mysql.connector
+# library mysql.connector imported to connect with the sql databases
 
 app = Flask(__name__)
+# app defined to store the name of the application package
 
 mydb = mysql.connector.connect(
   host="127.0.0.1",
   user="root",
   password="", database = "chennaiwater_db"
 )
+# object - mydb defined to created a connection with the database in the given host, user and password
 
-@app.route("/")
-def home():
-    return render_template("home.html")
+@app.route("/")     # defines how to access the given page of the application
+def home():       # defines the home page of the application
+    return render_template("home.html")   # generates the output and passes the parameters to the .html file
 
 @app.route("/lakelevel")
-def lakelevel():
+def lakelevel():        # defines the lakelevel page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_yearlylakelevels")
     data = dbcursor.fetchall()
@@ -31,10 +35,10 @@ def lakelevel():
         for j in range(1,6):
             a.append(i[j])
     dbcursor.close()
-    return render_template("lakelevel.html", value = data, b = a)
+    return render_template("lakelevel.html", value = data, b = a)       # returns the value generated on to the .html file which further uses Jija2 engine to deliver the page of the application
 
 @app.route("/rainfall")
-def rainfall():
+def rainfall():         # defines the rainfall page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_monthlyrainfalllevel")
     data = dbcursor.fetchall()
@@ -47,7 +51,7 @@ def rainfall():
     return render_template("rainfall.html", value = data, y = yaxis)
 
 @app.route("/poondi")
-def poondi():
+def poondi():         # defines the poondi page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_poondi_monthlylakelevel")
     data = dbcursor.fetchall()
@@ -60,7 +64,7 @@ def poondi():
     return render_template("poondi.html", value = data, y = yaxis)
 
 @app.route("/cholavaram")
-def cholavaram():
+def cholavaram():         # defines the cholavaram page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_cholavaram_monthlylakelevel")
     data = dbcursor.fetchall()
@@ -73,7 +77,7 @@ def cholavaram():
     return render_template("cholavaram.html", value = data, y = yaxis)
 
 @app.route("/redhills")
-def redhills():
+def redhills():         # defines the redhills page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_redhills_monthlylakelevel")
     data = dbcursor.fetchall()
@@ -86,7 +90,7 @@ def redhills():
     return render_template("redhills.html", value = data, y = yaxis)
 
 @app.route("/chembarambakkam")
-def chembarambakkam():
+def chembarambakkam():        # defines the chembarambakkam page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_chembarambakkam_monthlylakelevel")
     data = dbcursor.fetchall()
@@ -99,7 +103,7 @@ def chembarambakkam():
     return render_template("chembarambakkam.html", value = data, y = yaxis)
 
 @app.route("/veeranam")
-def veeranam():
+def veeranam():               # defines the veeranam page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_veeranam_monthlylakelevel")
     data = dbcursor.fetchall()
@@ -112,7 +116,7 @@ def veeranam():
     return render_template("veeranam.html", value = data, y = yaxis)
 
 @app.route("/query")
-def query():
+def query():              # defines the query page of the application
     dbcursor = mydb.cursor()
     dbcursor.execute("SELECT * FROM table_monthlyrainfalllevel WHERE TOTAL = (SELECT (MIN(TOTAL)) FROM table_monthlyrainfalllevel)")
     MinRainfall = dbcursor.fetchall()
@@ -135,3 +139,5 @@ def admin():
 
 if __name__ == '__main__':
     app.run()
+# Command to run the application   
+ 
