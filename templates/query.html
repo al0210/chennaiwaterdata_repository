@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title> Queries </title>
+        <style>
+            body {
+                background-color: #f0f8ff;
+        }
+            table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                
+        }
+            th, td {
+                border: 1px solid black;
+                width:50px;
+                text-align:center;
+                border:1px solid black;
+                padding:5px
+        }
+            th{
+                text-align: center;
+                background-color:Black;
+                color:white;
+        }
+            td{
+                text-align: center;
+        }
+            .year{
+                background-color: #F5F5DC;
+                font-weight: bold;    
+        }
+            details {
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: .5em .5em 0;
+        }
+            summary {
+                font-weight: bold;
+                margin: -.5em -.5em 0;
+                padding: .5em;
+        }
+
+            details[open] {
+                padding: .5em;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <center> 
+            <h2> Queries </h2>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> Which year had the minimum rainfall (in mm) in Chennai? <h4> 
+                </summary>
+                <p> The year 2003 witnessed the minimum rainfall in the years 2003-2021. The total rainfall level of that year read at just 810 mm.</p> 
+                <p> While January and February didn't see any rainfall, the first five months of the year a mere 16mm of rainfall.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>January</th>
+                            <th>February</th>
+                            <th>March</th>
+                            <th>April</th>
+                            <th>May</th>
+                            <th>June</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>September</th>
+                            <th>October</th>
+                            <th>November</th>
+                            <th>December</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in minrain %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                            <td>{{row[2]}}</td> 
+                            <td>{{row[3]}}</td> 
+                            <td>{{row[4]}}</td> 
+                            <td>{{row[5]}}</td> 
+                            <td>{{row[6]}}</td>
+                            <td>{{row[7]}}</td>
+                            <td>{{row[8]}}</td>
+                            <td>{{row[9]}}</td>
+                            <td>{{row[10]}}</td>
+                            <td>{{row[11]}}</td>
+                            <td>{{row[12]}}</td>
+                            <td>{{row[13]}}</td>
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> Which year had the maximum rainfall (in mm) in Chennai? <h4> 
+                </summary>
+                <p> The year 2005 gave the city of Chennai the maximum rainfall since 2003 till date with a rainfall level of 2208 mm. </p> 
+                <p> The final three months of the year alone witnessed 1605 mm, more than 70% of the overall rainfall that year.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>January</th>
+                            <th>February</th>
+                            <th>March</th>
+                            <th>April</th>
+                            <th>May</th>
+                            <th>June</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>September</th>
+                            <th>October</th>
+                            <th>November</th>
+                            <th>December</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in maxrain %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                            <td>{{row[2]}}</td> 
+                            <td>{{row[3]}}</td> 
+                            <td>{{row[4]}}</td> 
+                            <td>{{row[5]}}</td> 
+                            <td>{{row[6]}}</td>
+                            <td>{{row[7]}}</td>
+                            <td>{{row[8]}}</td>
+                            <td>{{row[9]}}</td>
+                            <td>{{row[10]}}</td>
+                            <td>{{row[11]}}</td>
+                            <td>{{row[12]}}</td>
+                            <td>{{row[13]}}</td>
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> At the end of which year did Tamil Nadu witness its lowest water storage in the main reservoirs? <h4> 
+                </summary>
+                <p> The year 2003 saw the lowest water levels in the main reservoirs of Tamil Nadu. Chennai's Cholavaram </p> 
+                <p> had zero storage while Chembarambakkam witnessed a storage of 8 just million cubic feet. </p>
+                <p> Overall, the five main reservoirs put together had a water storage of 1021 mcft. </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>Poondi</th>
+                            <th>Cholavaram</th>
+                            <th>RedHills</th>
+                            <th>Chembarambakkam</th>
+                            <th>Veeranam</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in minstorage %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                            <td>{{row[2]}}</td> 
+                            <td>{{row[3]}}</td> 
+                            <td>{{row[4]}}</td> 
+                            <td>{{row[5]}}</td> 
+                            <td>{{row[6]}}</td>
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> At the end of which year did Tamil Nadu witness its highest water storage in the main reservoirs? <h4> 
+                </summary>
+                <p> 2008 was the year which saw the highest water storage in Tamil Nadu's reservoirs. </p> 
+                <p> At the end of the year, the total water level in the main reservoirs was at 11057 mcft </p>
+                <p> with three of the five reservoirs on focus had a lake level of more than 3000 mcft. </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>Poondi</th>
+                            <th>Cholavaram</th>
+                            <th>RedHills</th>
+                            <th>Chembarambakkam</th>
+                            <th>Veeranam</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in maxstorage %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                            <td>{{row[2]}}</td> 
+                            <td>{{row[3]}}</td> 
+                            <td>{{row[4]}}</td> 
+                            <td>{{row[5]}}</td> 
+                            <td>{{row[6]}}</td>
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> In which year was the total rainfall and reservoir storage level was at a bare minimum? <h4> 
+                </summary>
+                <p> 2003 was the year which gave a concern for a drought. The total index of  </p> 
+                <p> rainfall and reservoir level was at a mimimum with 1831 units. </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in drought %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+            <br>
+            <details> 
+                <summary> 
+                    <h4> In which year was the total rainfall and reservoir storage level was at its maximum level? <h4> 
+                </summary>
+                <p> 2008 was the year which had a very high level of rainfall as well as reservoir levels. </p> 
+                <p> The total index was at 12712 units. </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Year</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        {% for row in floods %}  
+                        <tr> 
+                            <td  class = "year" >{{row[0]}}</td>
+                            <td>{{row[1]}}</td> 
+                        </tr> 
+                        {% endfor %} 
+                    </tbody>
+                </table>    
+            </details>
+        </center>
+    </body>
+</html>
