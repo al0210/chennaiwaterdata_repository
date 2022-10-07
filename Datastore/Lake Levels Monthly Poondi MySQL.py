@@ -11,7 +11,7 @@ import MySQLdb
 # importing library - MySQLdb to connect with the database and write the necessary data
 
 poondidb = MySQLdb.connect(host="127.0.0.1", user = "root", password = "", database="chennaiwater_db") 
-# object - lakeleveldb defined to created a connection with the database in the given host, user and password
+# object - poondidb defined to created a connection with the database in the given host, user and password
 
 with open('Monthly Lake Level Poondi.csv') as csv_file: # to open the .csv that needs to be connected to the database
     csvfile = csv.reader(csv_file, delimiter =',')      # the .csv which is opened is being read into the object - csvfile
