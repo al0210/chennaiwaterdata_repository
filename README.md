@@ -16,7 +16,7 @@ The micro web framework flask was imported into python in order to help create t
 The home page of the application contains a brief description of the website and the links for each of the other pages. There are eight other pages - seven for displaying and visualizing each of the tables stored in the database, and one for the query mechanism. The data visualization is represented in the form of bar charts which were formed in the backend with the help of Chart-js. 
 
 Overall, the web application is a good start and there is room for a lot of improvements and additions. 
-'
+
 
 
 **Directory Structure**
@@ -103,13 +103,17 @@ ix) veeranam.html - Contains the code run to develop the page containing informa
 
 This section contains the instructions that one needs to follow in order to run this programs successfully. 
 
-1. First of all, one must require to have python installed and need to run all the given codes in a suitable IDE to develop the project. 
+1. To access the project in your system, please go to command prompt and run the command "git clone https://github.com/al0210/chennaiwaterdata_repository.git"
 
-2. MySQL is another pre requisite to have in order to store the data scraped into databses and further use them to show information in the web interfaces. 
+2. To run the codes, first of all, one must require to have python installed and need to run all the given codes in a suitable IDE to develop the project. 
 
-3. All the libraries listed in the next sextion - list of dependencies - need to be installed in python before running the respective programs
+3. MySQL is another pre requisite to have in order to store the data scraped into databses and further use them to show information in the web interfaces. 
 
-4. The files being called and accessed like the .csv and .html files need to be present in the required location in order to be accessed while programming. Csv files need to be present in the same folder as the .py files which contain reading from or writing to the .csv. .html files need to be present in the folder 'templates' which Jinja2 Engine needs to process and develop the requirements for the web application. 
+4. All the libraries listed in the next sextion - list of dependencies - need to be installed in python before running the respective programs
+
+5. The files being called and accessed like the .csv and .html files need to be present in the required location in order to be accessed while programming. Csv files need to be present in the same folder as the .py files which contain reading from or writing to the .csv. .html files need to be present in the folder 'templates' which Jinja2 Engine needs to process and develop the requirements for the web application. 
+
+6. To run the web application, open the python file 'Web Interface.py' and run the program. When you run the program you, on the console, you will see a link - 'http://127.0.0.1:5000/'. Copy this link (don't press ctrl+c but copy it by right clicking. clicking on ctrl+c will lead to quitting the console and the link would not have copied) and paste it on your browser. Access the other pages of the web interface by clicking on the links provided in the home page. 
 
 
 
@@ -126,5 +130,7 @@ This section contains the instructions that one needs to follow in order to run 
 5. Flask
 
 6. csv (library)
+
+7. Chart.js
 
 
