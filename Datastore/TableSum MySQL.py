@@ -12,7 +12,8 @@ mydb = mysql.connector.connect(
   host="127.0.0.1",
   user="root",
   password="", database = "chennaiwater_db"
-)
+)   
+# object - mydb defined to created a connection with the database in the given host, user and password
 
 dbcursor = mydb.cursor()
 # defining the cursor in the database to perform the required executions
