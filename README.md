@@ -18,12 +18,111 @@ The home page of the application contains a brief description of the website and
 Overall, the web application is a good start and there is room for a lot of improvements and additions. 
 
 
+
 **Directory Structure**
+
+The directory contains five folders with all the project documents and one README file which contains the guide to the project. The following is a brief description of each component in the directory. 
+
+**1. Database** - This folder contains a .sql file - chennaiwater_db.sql - containing all the databases developed and used during the course of the project. 
+
+**2. Datastore** - This folder contains 15 files in all - 8 .py files and 7 .csv files. The .py files contain the codes which were developed to write the data into the database schema. The .csv files are the ones from which the data was read into the .py files before connecting with the mysql database. 
+
+i) Lake Level Yearly MySQL.py - Contains the code which was used to develop the database table - 	table_yearlylakelevels
+
+ii) Lake Levels Monthly Chembarambakkam MySQL.py - Contains the code which was used to develop the database table - 	table_chembarambakkam_monthlylakelevel
+
+iii) Lake Levels Monthly Cholavaram MySQL.py - Contains the code which was used to develop the database table - 	table_cholavaram_monthlylakelevel
+
+iv) Lake Levels Monthly Poondi MySQL.py - Contains the code which was used to develop the database table - 	table_poondi_monthlylakelevel
+
+v) Lake Levels Monthly Red Hills MySQL.py - Contains the code which was used to develop the database table - 	table_redhills_monthlylakelevel
+
+vi) Lake Levels Monthly Veeranam MySQL.py - Contains the code which was used to develop the database table - 	table_veeranam_monthlylakelevel
+
+vii) Monthly Lake Level Chembarambakkam.csv - Contains the data of monthly lake level in the reservoir Chembarambakkam
+
+viii) Monthly Lake Level Cholavaram.csv - Contains the data of monthly lake level in the reservoir Cholavaram
+
+ix) Monthly Lake Level Poondi.csv - Contains the data of monthly lake level in the reservoir Poondi
+
+x) Monthly Lake Level Red Hills.csv - Contains the data of monthly lake level in the reservoir Red Hills
+
+xi) Monthly Lake Level Veeranam.csv - Contains the data of monthly lake level in the reservoir Veeranam
+
+xii) Monthly Rainfall Level MySQL.py - Contains the code which was used to develop the database table - 		table_monthlyrainfalllevel
+
+xiii) Monthly Rainfall Level.csv - Contains the data of monthly rainfall level in Chennai
+
+xiv) TableSum MySQL.py - Contains the code which was used to develop the database table - 		table_sum
+
+xv) Yearly Lake Level Reservoirs.csv - Contains the data of yearly lake level (in December) in the reservoirs - Poondi, Cholavaram, Red Hills, Chembarambakkam, Veeranam
+
+**3. Web Interface** - This folder contains the .py file which has the code for the development of the web interface. 
+
+**4. Web Scraper** - This folder contains 14 files - 7 .py files and 7 .csv files. The 7 .csv files are the same files that are also contained in the folder - Datastore. The 7 .py files each contain the code which was developed to scrape data from the web and develop the .csv files. 
+
+i) Lake Levels All.py - Contains the code which was used to scrape the yearly lake level data of five reservoirs and writing them onto the .csv file - Yearly Lake Level Reservoirs.csv
+
+ii) Lake Levels Monthly Chembarambakkam.py - Contains the code which was used to scrape the monthly lake level data of Chembarambakkam reservoir and writing them onto the .csv file - Monthly Lake Level Chembarambakkam.csv
+
+iii) Lake Levels Monthly Cholavaram.py - Contains the code which was used to scrape the monthly lake level data of Cholavaram reservoir and writing them onto the .csv file - Monthly Lake Level Cholavaram.csv
+
+iv) Lake Levels Monthly Poondi.py - Contains the code which was used to scrape the monthly lake level data of Poondi reservoir and writing them onto the .csv file - Monthly Lake Level Poondi.csv
+
+v) Lake Levels Monthly Red Hills.py - Contains the code which was used to scrape the monthly lake level data of Red Hills reservoir and writing them onto the .csv file - Monthly Lake Level Red Hills.csv
+
+vi) Lake Levels Monthly Veeranam.py - Contains the code which was used to scrape the monthly lake level data of Veeranam reservoir and writing them onto the .csv file - Monthly Lake Level Veeranam.csv
+
+vii) Rainfall Levels Monthly All.py - Contains the code which was used to scrape the monthly rainfall level data in Chennai and writing them onto the .csv file - Monthly Rainfall Level.csv
+
+**5. templates** - This folder contains all the 9 .html files of the developed web application. 
+
+i) chembarambakkam.html - Contains the code run to develop the page containing information about Chembarambakkam reservoir
+
+ii) cholavaram.html - Contains the code run to develop the page containing information about Cholavaram reservoir
+
+iii) home.html - Contains the code run to develop the page containing information about the home page of the web application
+
+iv) lakelevel.html - Contains the code run to develop the page containing information about the lake levels of the five main reservoirs - Poondi, Cholavaram, Red Hills, Chembarambakkam and Veeranam
+
+v) poondi.html - Contains the code run to develop the page containing information about Poondi reservoir
+
+vi) query.html - Contains the code run to develop the page containing information about queries about the data
+
+vii) rainfall.html - Contains the code run to develop the page containing information about the rainfall level in Chennai
+
+viii) redhills.html - Contains the code run to develop the page containing information about Red Hills reservoir
+
+ix) veeranam.html - Contains the code run to develop the page containing information about Veeranam reservoir
+
+**6. README.md** - Describes the project, the directory structure, build instructions and list of dependencies for running the project. 
 
 
 **Build Instructions**
 
+This section contains the instructions that one needs to follow in order to run this programs successfully. 
+
+1. First of all, one must require to have python installed and need to run all the given codes in a suitable IDE to develop the project. 
+
+2. MySQL is another pre requisite to have in order to store the data scraped into databses and further use them to show information in the web interfaces. 
+
+3. All the libraries listed in the next sextion - list of dependencies - need to be installed in python before running the respective programs
+
+4. The files being called and accessed like the .csv and .html files need to be present in the required location in order to be accessed while programming. Csv files need to be present in the same folder as the .py files which contain reading from or writing to the .csv. .html files need to be present in the folder 'templates' which Jinja2 Engine needs to process and develop the requirements for the web application. 
+
 
 **List of dependencies**
+
+1. BeautifulSoup
+
+2. requests
+
+3. pandas
+
+4. MySQLdb or mysql.connector
+
+5. Flask
+
+6. csv (library)
 
 
